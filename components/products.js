@@ -7,7 +7,7 @@ export default class products extends Component {
         axios.get("http://localhost:5000/products/").then(res=>this.setState({ products: res.data }));
         console.log(this.state.products);
         return (
-            <div className={gridcontainer}>
+            <div className="d-flex align-content-start flex-wrap bd-highlight example-parent">
                 {this.state.products.map((product) => (
                     <Card key={product.id} name={product.name} price={product.price} description={product.description}/>
                 
@@ -16,8 +16,8 @@ export default class products extends Component {
         )
     }
 }
-const gridcontainer={
-    display: "grid",
-    gridTemplateColumns:"auto auto auto",
-    padding: "10px"
-}
+// const gridcontainer={
+//     display: "grid",
+//     gridTemplateColumns:"auto auto auto",
+//     padding: "10px"
+// }
